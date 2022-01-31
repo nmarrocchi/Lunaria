@@ -1,0 +1,15 @@
+*{
+  margin: 0%;
+  padding: 0%;
+}
+
+html{
+  background-image: url("../img/Wallpaper.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+a:link {color: white; text-decoration: none;}
+a:visited {color: white; text-decoration: none;}
+a:hover {color: white; text-decoration: underline; cursor:pointer;}
+a:active {color: white; text-decoration: none;}
