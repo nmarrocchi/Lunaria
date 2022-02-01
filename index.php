@@ -11,8 +11,9 @@
 <body>
 
   <div class="nav">
-    <a href=""><p>Register</p></a>
     <a href=""><p>login</p></a>
+    <a href=""><p>Register</p></a>
+    <a href=""><p>Marketplace</p></a>
   </div>
   
 </body>

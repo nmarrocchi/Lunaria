@@ -9,5 +9,10 @@
   display: inline-flex;
   margin: 0vh 1vw;
   font-size: large;
-  text-align: right;
+  float: right;
+  color: rgb(17, 219, 226);
+}
+
+.nav a:hover{
+  color: rgb(0, 247, 255);
 }
