@@ -4,9 +4,8 @@
 }
 
 html{
-  background-image: url("../img/Wallpaper.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background: rgb(22,20,45);
+  background: linear-gradient(143deg, rgba(22,20,45,1) 0%, rgba(17,17,45,1) 100%);
 }
 
 a:link {color: white; text-decoration: none;}
@@ -15,10 +14,11 @@ a:hover {color: white; text-decoration: underline; cursor:pointer;}
 a:active {color: white; text-decoration: none;}
 
 @font-face {
-    font-family: "Fraktur";
-    src: url("../font/Fraktur.ttf")
-   }
+  font-family: "Fraktur";
+  src: url("../font/Fraktur.ttf")
+}
 
-   body{
-     font-family: "Fraktur";
-   }
+body{
+  font-family: "Fraktur";
+  color: aliceblue;
+}
