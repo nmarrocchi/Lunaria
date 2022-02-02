@@ -3,7 +3,7 @@
 
     try
     {
-        $BDD = new PDO('mysql:host=mysql-lunaria.alwaysdata.net; dbname=lunaria_lunaria', 'lunaria', '0ver_Draw070902');  
+        $bdd = new PDO('mysql:host=mysql-lunaria.alwaysdata.net; dbname=lunaria_lunaria', 'lunaria', '0ver_Draw070902');  
     }
 
     catch(Exception $e)
