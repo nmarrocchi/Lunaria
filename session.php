@@ -1,27 +1,24 @@
 <?php
     // - Init bdd
 
-    $host = "mysql-lunaria.alwaysdata.net";
-    $dbase = "lunaria_lunaria";
-    $user = "lunaria";
-    $password = "Manon_01-11-21";
-
     try
     {
-        $BDD = new PDO('mysql:host='$host'; dbname='$dbase'; charset=utf8', $user, $password);
+        $BDD = new PDO('mysql:host=mysql-lunaria.alwaysdata.net; dbname=lunaria_lunaria', 'lunaria', '0ver_Draw070902');  
     }
 
     catch(Exception $e)
     {
-        echo "J'ai eu un problème erreur :".$e->getMessage();
+        echo "J ai eu un problème erreur :".$e->getMessage();
     }
 
 
-    function check() {
-        if($_SESSION && ( $_SESSION["Logged"] == true )) {
-            return false;
-        } else {
-            return true;
+/* Check if user is logged and if isn't, he can login */
+function CheckIfCanBeLog(){
+    if(isset($_SESSION['Logged'])){
+        if($_SESSION['Logged'] == 1){
+            header('Location: index.php');
         }
     }
+}
+
 ?>
