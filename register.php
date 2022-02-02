@@ -4,6 +4,7 @@
 
     if (isset($_POST["submit"])) {
         $UserExist = $bdd->query("SELECT COUNT(*) FROM users WHERE username ='".$_POST['username']."'");
+        print_r("SELECT COUNT(*) FROM users WHERE username ='".$_POST['username']."'");
         $UserExist = $UserExist->fetch();
 
         if ($UserExist["COUNT(*)"] > 0) {
