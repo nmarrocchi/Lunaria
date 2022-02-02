@@ -2,8 +2,6 @@
     session_start();
     require("session.php");
 
-    print_r("SELECT COUNT(*) FROM users WHERE username ='".$_POST['username']."'");
-/*
     if (isset($_POST["submit"])) {
         $UserExist = $bdd->query("SELECT COUNT(*) FROM users WHERE username ='".$_POST['username']."'");
         $UserExist = $UserExist->fetch();
@@ -12,17 +10,17 @@
             $CreateAccount = "This username is taken...";
         } 
         else {
-            $bdd->query("INSERT INTO users(username, password, isAdmin) VALUES('".$_POST['username']."','".$_POST['password']."',0)");
+            $date = date('Y-m-d H:i:s');
+            $bdd->query("INSERT INTO users(username, password, registration, isAdmin) VALUES('".$_POST['username']."','".$_POST['password']."','".$date."',0)");
             $CreateAccount = "Your account has been created";
             
         }
     }
     else{
-        $CreateAccount = "This username is taken...";
+        $CreateAccount = "";
     }
-*/
-    $CreateAccount = "";
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,7 +30,7 @@
     <link rel="stylesheet" href="style/index.css">
     <link rel="stylesheet" href="style/nav.css">
     <link rel="stylesheet" href="style/forms.css">
-    <title>Lunaria | login</title>
+    <title>Lunaria | Register</title>
 </head>
 <body>
 
