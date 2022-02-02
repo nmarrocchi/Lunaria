@@ -2,9 +2,10 @@
     session_start();
     require("session.php");
 
+    print_r("SELECT COUNT(*) FROM users WHERE username ='".$_POST['username']."'");
+/*
     if (isset($_POST["submit"])) {
         $UserExist = $bdd->query("SELECT COUNT(*) FROM users WHERE username ='".$_POST['username']."'");
-        print_r("SELECT COUNT(*) FROM users WHERE username ='".$_POST['username']."'");
         $UserExist = $UserExist->fetch();
 
         if ($UserExist["COUNT(*)"] > 0) {
@@ -19,7 +20,7 @@
     else{
         $CreateAccount = "This username is taken...";
     }
-
+*/
     $CreateAccount = "";
 ?>
 <!DOCTYPE html>
