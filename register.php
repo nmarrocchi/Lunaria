@@ -18,6 +18,8 @@
     else{
         $CreateAccount = "This username is taken...";
     }
+
+    $CreateAccount = "";
 ?>
 <!DOCTYPE html>
 <html lang="en">
