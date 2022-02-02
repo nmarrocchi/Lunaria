@@ -10,8 +10,7 @@
             $CreateAccount = "This username is taken...";
         } 
         else {
-            $date = date('m/d/Y h:i:s a', time());
-            $bdd->query("INSERT INTO users(username, password, registration, isAdmin) VALUES('".$_POST['username']."','".$_POST['password']."', "$date",0)");
+            $bdd->query("INSERT INTO users(username, password, isAdmin) VALUES('".$_POST['username']."','".$_POST['password']."',0)");
             $CreateAccount = "Your account has been created";
             
         }
