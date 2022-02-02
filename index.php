@@ -1,3 +1,9 @@
+<?php
+  session_start();
+
+  if(!isset($_SESSION['logged'])){ $_SESSION['logged'] = 0;}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
