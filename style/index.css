@@ -13,3 +13,12 @@ a:link {color: white; text-decoration: none;}
 a:visited {color: white; text-decoration: none;}
 a:hover {color: white; text-decoration: underline; cursor:pointer;}
 a:active {color: white; text-decoration: none;}
+
+@font-face {
+    font-family: "Fraktur";
+    src: url("../font/Fraktur.ttf")
+   }
+
+   body{
+     font-family: "Fraktur";
+   }
