@@ -11,6 +11,7 @@
 <body>
 
   <div class="nav">
+    <img class="Logo" src="img/Banner.png" alt="Logo">
     <a href=""><p>login</p></a>
     <a href=""><p>Register</p></a>
     <a href=""><p>Marketplace</p></a>
