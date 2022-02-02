@@ -1,3 +1,9 @@
+.createMsg {
+    margin-top: 3vh;
+    color: rgb(202, 0, 0);
+    text-align: center;
+}
+
 .Form{
     margin: 15vh auto;
     width: 25vw;
