@@ -4,13 +4,14 @@
 }
 
 html{
+  cursor: url(../img/Cursor.cur), pointer;
   background: rgb(22,20,45);
   background: linear-gradient(143deg, rgba(22,20,45,1) 0%, rgba(17,17,45,1) 100%);
 }
 
 a:link {color: white; text-decoration: none;}
 a:visited {color: white; text-decoration: none;}
-a:hover {color: white; text-decoration: underline; cursor:pointer;}
+a:hover {color: white; text-decoration: underline; cursor: url(../img/Cursor.cur), pointer;}
 a:active {color: white; text-decoration: none;}
 
 @font-face {
@@ -21,4 +22,9 @@ a:active {color: white; text-decoration: none;}
 body{
   font-family: "Fraktur";
   color: aliceblue;
+}
+
+.content{
+  text-align: center;
+  margin-top: 10vh;
 }
