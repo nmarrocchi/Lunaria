@@ -15,6 +15,7 @@
 
 .nav a:hover{
   color: rgb(168, 168, 168);
+  cursor: url(../img/Cursor.cur), pointer;
 }
 
 .Logo{
