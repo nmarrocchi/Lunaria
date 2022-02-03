@@ -37,11 +37,16 @@
     font-size: larger;
 }
 
+.Form input:hover, .Form label:hover{
+    cursor: url(../img/Cursor.cur), pointer;
+}
+
 .Form input:focus{
     border: none;
     border-bottom: solid white 1px;
     outline: none;
     background-color: transparent;
+    cursor: url(../img/Cursor.cur), pointer;
 }
 
 .Form input[type="submit"]{
@@ -59,6 +64,7 @@
 
 .Form input[type="submit"]:hover{
     background-color: rgb(33, 30, 54);
+    cursor: url(../img/Cursor.cur), pointer;
 }
 
 /* ----- Responsive max-width screen : 1480px ----- */
