@@ -18,5 +18,5 @@
 <?php
     }
 ?>
-  <a href=""><p>Marketplace</p></a>
+  <a href="marketplace.php"><p>Marketplace</p></a>
 </div>
