@@ -22,6 +22,7 @@
 }
 
 .tabHeader{
+  width: 20vw;
   border-radius: 10px 0px;
   border: double rgb(187, 187, 187) 1px;
   font-size: larger;
