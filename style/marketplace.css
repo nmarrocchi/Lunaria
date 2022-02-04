@@ -1,0 +1,32 @@
+.fishs{
+  width: 50vw;
+  margin: 10vh auto;
+  padding: 5vh 0vw;
+  background-color: rgba(100, 100, 100, 0.7);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.water, .choco, .lava, .plasma{
+  margin: 5vh auto;
+  text-align: center;
+}
+
+.water table, .choco table, .lava table, .plasma table{
+  margin: 3vh auto;
+}
+
+.water table td, .choco table td, .lava table td, .plasma table td{
+  padding: 2vh 1vw;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.tabHeader{
+  border-radius: 10px 0px;
+  border: double rgb(187, 187, 187) 1px;
+  font-size: larger;
+}
+
+input[type="checkbox"]{
+  cursor: url(../img/Cursor.cur), pointer;
+}
