@@ -9,6 +9,7 @@
 ?>
   <a href="disconnect.php"><p>Disconnect</p></a>
   <a href="account.php"><p>My Account</p></a>
+  <a href="marketplace.php"><p>Marketplace</p></a>
 <?php
   }
   else{
@@ -18,5 +19,4 @@
 <?php
     }
 ?>
-  <a href="marketplace.php"><p>Marketplace</p></a>
 </div>
