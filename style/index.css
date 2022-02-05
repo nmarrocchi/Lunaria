@@ -20,6 +20,7 @@ a:active {color: white; text-decoration: none;}
 }
 
 body{
+  font-family: 'Courier New', Courier, monospace;
   font-family: "Fraktur";
   color: aliceblue;
 }
