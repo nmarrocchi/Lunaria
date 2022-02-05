@@ -141,6 +141,8 @@
                     ?>
                 </table>
             </div>
+
+            <input type="submit" id="submit_fishs" value="validate the purchase">
         </div>
 
             <!-- Init all display -->

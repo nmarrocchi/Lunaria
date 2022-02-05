@@ -1,13 +1,14 @@
 <?php
     session_start();
     require("session.php");
+    CheckIfCanLog();
 
     if (isset($_POST["submit"])) {
         $UserExist = $bdd->query("SELECT COUNT(*) FROM users WHERE username ='".$_POST['username']."'");
         $UserExist = $UserExist->fetch();
 
         if ($UserExist["COUNT(*)"] > 0) {
-            $_SESSION['logged'] = 1;
+            $_SESSION['Logged'] = 1;
             $_SESSION['user'] = $_POST['username'];
             header("location: index.php");
         } 

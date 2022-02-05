@@ -1,6 +1,7 @@
 <?php
-    session_start();
+    session_start(); 
     require("session.php");
+    CheckIfCanLog();
 
     if (isset($_POST["submit"])) {
         $UserExist = $bdd->query("SELECT COUNT(*) FROM users WHERE username ='".$_POST['username']."'");

@@ -11,13 +11,15 @@
         echo "J ai eu un problème erreur :".$e->getMessage();
     }
 
-
 /* Check if user is logged and if isn't, return to index */
-function CheckIfCanBeLog(){
+function CheckIfCanLog(){
     if(isset($_SESSION['Logged'])){
         if($_SESSION['Logged'] == 1){
             header('Location: index.php');
         }
+    }
+    else{
+        $_SESSION['Logged'] = 0;
     }
 }
 
@@ -27,6 +29,9 @@ function CheckIfIsLog(){
         if($_SESSION['Logged'] == 0){
             header('Location: index.php');
         }
+    }
+    else{
+        $_SESSION['Logged'] = 0;
     }
 }
 

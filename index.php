@@ -1,7 +1,10 @@
 <?php
   session_start();
-
-  if(!isset($_SESSION['logged'])){ $_SESSION['logged'] = 0;}
+  require("session.php");
+  if(!isset($_SESSION['Logged']))
+  {
+    $_SESSION['Logged'] = 0;
+  }
 ?>
 
 <!DOCTYPE html>
