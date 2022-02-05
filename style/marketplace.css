@@ -19,6 +19,7 @@
 .water table td, .choco table td, .lava table td, .plasma table td{
   padding: 2vh 1vw;
   font-family: 'Courier New', Courier, monospace;
+  text-align: center;
 }
 
 .tabHeader{
@@ -26,6 +27,14 @@
   border-radius: 10px 0px;
   border: double rgb(187, 187, 187) 1px;
   font-size: larger;
+}
+
+.OrderSendMsg{
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  font-size: larger;
+  color: rgb(0, 185, 0);
+  text-shadow: white 1px 1px;
 }
 
 input[type="checkbox"]{
