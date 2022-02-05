@@ -16,7 +16,7 @@ a:active {color: white; text-decoration: none;}
 
 @font-face {
   font-family: "Fraktur";
-  src: url("../font/Fraktur.ttf")
+  src: url("../font/Fraktur_Regular.ttf");
 }
 
 body{
