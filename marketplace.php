@@ -58,9 +58,8 @@
                             <td>
                                 <input type="checkbox" name="checkFish[]" value="<?php echo $fishlist['name_fr'] ?>" id="<?php echo $fishlist['name_fr'] ?>">
                             </td>
-                            <td>Image</td>
-                            <td><?php echo $fishlist['name_fr'] ?></td>
-                            <td><?php echo $fishlist['name_eng'] ?></td>
+                            <td><img src="img/fish/water/<?php echo $fishlist['id'] ?>.png" alt="fish"></td>
+                            <td><?php echo $fishlist['name_fr'] ?> / <?php echo $fishlist['name_eng'] ?></td>
                             <td><?php echo $fishlist['liquid'] ?></td>
                             <td><?php echo $fishlist['rarity'] ?></td>
                             <td><?php echo $fishlist['price'] ?></td>
@@ -87,9 +86,8 @@
                             <td>
                                 <input type="checkbox" name="checkFish[]" value="<?php echo $fishlist['name_fr'] ?>" id="<?php echo $fishlist['name_fr'] ?>">
                             </td>
-                            <td>Image</td>
-                            <td><?php echo $fishlist['name_fr'] ?></td>
-                            <td><?php echo $fishlist['name_eng'] ?></td>
+                            <td><img src="img/fish/choco/<?php echo $fishlist['id'] ?>.png" alt="fish"></td>
+                            <td><?php echo $fishlist['name_fr'] ?> / <?php echo $fishlist['name_eng'] ?></td>
                             <td><?php echo $fishlist['liquid'] ?></td>
                             <td><?php echo $fishlist['rarity'] ?></td>
                             <td><?php echo $fishlist['price'] ?></td>
@@ -116,9 +114,8 @@
                             <td>
                                 <input type="checkbox" name="checkFish[]" value="<?php echo $fishlist['name_fr'] ?>" id="<?php echo $fishlist['name_fr'] ?>">
                             </td>
-                            <td>Image</td>
-                            <td><?php echo $fishlist['name_fr'] ?></td>
-                            <td><?php echo $fishlist['name_eng'] ?></td>
+                            <td><img src="img/fish/choco/<?php echo $fishlist['id'] ?>.png" alt="fish"></td>
+                            <td><?php echo $fishlist['name_fr'] ?> / <?php echo $fishlist['name_eng'] ?></td>
                             <td><?php echo $fishlist['liquid'] ?></td>
                             <td><?php echo $fishlist['rarity'] ?></td>
                             <td><?php echo $fishlist['price'] ?></td>
@@ -145,9 +142,8 @@
                             <td>
                                 <input type="checkbox" name="checkFish[]" value="<?php echo $fishlist['name_fr'] ?>" id="<?php echo $fishlist['name_fr'] ?>">
                             </td>
-                            <td>Image</td>
-                            <td><?php echo $fishlist['name_fr'] ?></td>
-                            <td><?php echo $fishlist['name_eng'] ?></td>
+                            <td><img src="img/fish/choco/<?php echo $fishlist['id'] ?>.png" alt="fish"></td>
+                            <td><?php echo $fishlist['name_fr'] ?> / <?php echo $fishlist['name_eng'] ?></td>
                             <td><?php echo $fishlist['liquid'] ?></td>
                             <td><?php echo $fishlist['rarity'] ?></td>
                             <td><?php echo $fishlist['price'] ?></td>
