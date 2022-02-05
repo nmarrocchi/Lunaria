@@ -31,3 +31,21 @@
 input[type="checkbox"]{
   cursor: url(../img/Cursor.cur), pointer;
 }
+
+input[type="submit"]{
+  margin: 5vh auto;
+  width: 15vw;
+  height: 5vh;
+  font-size: large;
+  font-family: "Fraktur";
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: rgb(229, 204, 140);
+  border: solid white 1px;
+  border-radius: 5px;
+}
+
+input[type="submit"]:hover{
+  background-color: rgba(33, 30, 54, 0.6);
+  cursor: url(../img/Cursor.cur), pointer;
+}
