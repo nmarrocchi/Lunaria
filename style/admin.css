@@ -1,0 +1,48 @@
+.usersList{
+  margin: 5vh auto;
+  font-size: medium;
+  font-family: 'Courier New', Courier, monospace;
+  border-collapse: collapse;
+}
+
+.usersList td{
+  padding: 1vh 2.5vw;
+}
+
+.THeader{
+  border-bottom: dotted white 2px;
+  border-left: dotted white 2px;
+  border-right: dotted white 2px;
+}
+
+.adminSubmit{
+  border: none;
+  font-size: large;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  color: red;
+  background-color: transparent;
+  text-shadow: rgb(163, 163, 163) 1px 1px;
+  font-weight: bold;
+}
+
+.adminSubmit:focus{
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: url(../img/Cursor.cur), pointer;
+}
+
+
+.adminSubmit:hover{
+  background-color: transparent;
+  cursor: url(../img/Cursor.cur), pointer;
+}
+
+.deleteMsg{
+  margin: 2vh auto;
+  font-size: medium;
+  font-family: 'Courier New', Courier, monospace;
+  color: rgb(37, 158, 0);
+  text-shadow: rgb(163, 163, 163) 1px 1px;
+}
