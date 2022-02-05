@@ -7,3 +7,21 @@
   font-size: large;
   margin: 1vh 0vw;
 }
+
+.userOrder{
+  font-family: 'Courier New', Courier, monospace;
+  margin: 10vh auto;
+}
+
+.orderHeader{
+  border: solid white 1px;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.userOrder td{
+  padding: 2vh 2vw;
+}
+
+.totalOrder{
+  border-top: dotted white 1px;
+}
