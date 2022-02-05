@@ -42,7 +42,7 @@
 
             <p class="createMsg"><?php echo $CreateAccount?></p>
 
-            <label for="username">Username : </label>
+            <label for="username">Username ( please enter your trove account name ): </label>
             <input type="text" name="username" required></input>
 
             <label for="password">Password :</label>
