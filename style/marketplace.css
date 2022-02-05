@@ -1,10 +1,14 @@
 .fishs{
-  width: 50vw;
+  width: 70vw;
   margin: 10vh auto;
   padding: 5vh 0vw;
   background-color: rgba(100, 100, 100, 0.7);
   border-radius: 10px;
   text-align: center;
+}
+
+.waterfishs img, .chocofishs img, .lavafishs img, .plasmafishs img{
+  width: 5vw;
 }
 
 .water, .choco, .lava, .plasma{
@@ -17,13 +21,13 @@
 }
 
 .water table td, .choco table td, .lava table td, .plasma table td{
-  padding: 2vh 1vw;
+  padding: 2vh 0.5vw;
   font-family: 'Courier New', Courier, monospace;
   text-align: center;
 }
 
 .tabHeader{
-  width: 20vw;
+  width: 40vw;
   border-radius: 10px 0px;
   border: double rgb(187, 187, 187) 1px;
   font-size: larger;
@@ -39,10 +43,13 @@
 
 input[type="checkbox"]{
   cursor: url(../img/Cursor.cur), pointer;
+  width: 20px;
+  height: 20px;
 }
 
 input[type="submit"]{
   margin: 5vh auto;
+  padding: 0vh 2vw;
   width: 15vw;
   height: 5vh;
   font-size: large;
@@ -52,9 +59,44 @@ input[type="submit"]{
   color: rgb(229, 204, 140);
   border: solid white 1px;
   border-radius: 5px;
+  word-break: keep-all;
+  min-width: max-content;
 }
 
 input[type="submit"]:hover{
   background-color: rgba(33, 30, 54, 0.6);
   cursor: url(../img/Cursor.cur), pointer;
+}
+
+
+/* ----- Responsive max-width screen : 890px ----- */
+@media screen and (max-width: 890px) and (min-width: 600px) {
+
+  .water table td, .choco table td, .lava table td, .plasma table td{
+    padding: 1vh 0vw;
+    font-size: small;
+  }
+
+  input[type="checkbox"]{
+    width: 10px;
+    height: 10px;
+  }
+}
+
+/* ----- Responsive max-width screen : 600px ----- */
+@media screen and (max-width: 600px) {
+
+  .fishs{
+    width: 95vw;
+  }
+
+  .water table td, .choco table td, .lava table td, .plasma table td{
+    padding: 1vh 0vw;
+    font-size: smaller;
+  }
+
+  input[type="checkbox"]{
+    width: 10px;
+    height: 10px;
+  }
 }
