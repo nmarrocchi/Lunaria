@@ -81,6 +81,10 @@ input[type="submit"]:hover{
     width: 10px;
     height: 10px;
   }
+
+  .waterfishs img, .chocofishs img, .lavafishs img, .plasmafishs img{
+    width: 10vw;
+  }
 }
 
 /* ----- Responsive max-width screen : 600px ----- */
@@ -93,6 +97,10 @@ input[type="submit"]:hover{
   .water table td, .choco table td, .lava table td, .plasma table td{
     padding: 1vh 0vw;
     font-size: smaller;
+  }
+
+  .waterfishs img, .chocofishs img, .lavafishs img, .plasmafishs img{
+    width: 15vw;
   }
 
   input[type="checkbox"]{
