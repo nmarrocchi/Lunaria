@@ -8,9 +8,9 @@
         if(!empty($_POST['checkFish'])) {    
             foreach($_POST['checkFish'] as $value){
                 $date = date('Y-m-d H:i:s');
-                $price = $bdd->query("SELECT * FROM fishs WHERE name_fr = '".$value."'");
-                $price = $price->fetch();
-                $bdd->query("INSERT INTO `orders`(`user`, `fish`, `price`, `date`) VALUES ('".$_SESSION["user"]."','".$value."','".$price['price']."','".$date."')");
+                $fish = $bdd->query("SELECT * FROM fishs WHERE name_fr = '".$value."'");
+                $fish = $fish->fetch();
+                $bdd->query("INSERT INTO `orders`(`user`, `fish_fr`, `fish_eng`, `price`, `date`) VALUES ('".$_SESSION["user"]."','".$value."', '".$fish['name_eng']."','".$fish['price']."','".$date."')");
             
                 $OrderSendMsg = "Your order has been sent, thank you for your purchase";
             }
