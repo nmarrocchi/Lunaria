@@ -2,6 +2,21 @@
     session_start();
     require("session.php");
     CheckIfIsLog();
+    $OrderSendMsg = "";
+
+    if(isset($_POST['submit'])){
+        if(!empty($_POST['checkFish'])) {    
+            foreach($_POST['checkFish'] as $value){
+                $date = date('Y-m-d H:i:s');
+                $price = $bdd->query("SELECT * FROM fishs WHERE name_fr = '".$value."'");
+                $price = $price->fetch();
+                $bdd->query("INSERT INTO `orders`(`user`, `fish`, `price`, `date`) VALUES ('".$_SESSION["user"]."','".$value."','".$price['price']."','".$date."')");
+            
+                $OrderSendMsg = "Your order has been sent, thank you for your purchase";
+            }
+        }
+    } 
+
 ?>
 
 <!DOCTYPE html>
@@ -24,126 +39,130 @@
         $PlasmaFishs = $bdd->query("SELECT * FROM fishs WHERE liquid='plasma'");
         include "include/nav.php";
     ?>
+    <form action="" method="post">
 
-        <div class="fishs">
-            <div class="water">
-                <table>
-                    <tr>
-                        <td colspan="7" class="tabHeader" onclick="switchShowFishs(this.innerText)">Water</td>
-                    </tr>
-                        
-                    <?php
+            <div class="fishs">
+                <p class="OrderSendMsg"><?php echo $OrderSendMsg ?></p>
+                <div class="water">
+                    <table>
+                        <tr>
+                            <td colspan="7" class="tabHeader" onclick="switchShowFishs(this.innerText)">Water</td>
+                        </tr>
+                            
+                        <?php
 
-                        while($fishlist = $WaterFishs->fetch()){
-                    ?>
+                            while($fishlist = $WaterFishs->fetch()){
+                        ?>
 
-                    <tr class="waterfishs">
-                        <td>
-                            <input type="checkbox" name="<?php echo $fishlist['name_fr'] ?>" id="fish">
-                        </td>
-                        <td>Image</td>
-                        <td><?php echo $fishlist['name_fr'] ?></td>
-                        <td><?php echo $fishlist['name_eng'] ?></td>
-                        <td><?php echo $fishlist['liquid'] ?></td>
-                        <td><?php echo $fishlist['rarity'] ?></td>
-                        <td><?php echo $fishlist['price'] ?></td>
-                    </tr>
+                        <tr class="waterfishs">
+                            <td>
+                                <input type="checkbox" name="checkFish[]" value="<?php echo $fishlist['name_fr'] ?>" id="<?php echo $fishlist['name_fr'] ?>">
+                            </td>
+                            <td>Image</td>
+                            <td><?php echo $fishlist['name_fr'] ?></td>
+                            <td><?php echo $fishlist['name_eng'] ?></td>
+                            <td><?php echo $fishlist['liquid'] ?></td>
+                            <td><?php echo $fishlist['rarity'] ?></td>
+                            <td><?php echo $fishlist['price'] ?></td>
+                        </tr>
 
-                    <?php
-                        }
-                    ?>
-                </table>
+                        <?php
+                            }
+                        ?>
+                    </table>
+                </div>
+
+                <div class="choco">
+                    <table>
+                        <tr>
+                            <td colspan="7" class="tabHeader" onclick="switchShowFishs(this.innerText)">Choco</td>
+                        </tr>
+                            
+                        <?php
+
+                            while($fishlist = $ChocoFishs->fetch()){
+                        ?>
+
+                        <tr class="chocofishs">
+                            <td>
+                                <input type="checkbox" name="checkFish[]" value="<?php echo $fishlist['name_fr'] ?>" id="<?php echo $fishlist['name_fr'] ?>">
+                            </td>
+                            <td>Image</td>
+                            <td><?php echo $fishlist['name_fr'] ?></td>
+                            <td><?php echo $fishlist['name_eng'] ?></td>
+                            <td><?php echo $fishlist['liquid'] ?></td>
+                            <td><?php echo $fishlist['rarity'] ?></td>
+                            <td><?php echo $fishlist['price'] ?></td>
+                        </tr>
+
+                        <?php
+                            }
+                        ?>
+                    </table>
+                </div>
+
+                <div class="lava">
+                    <table>
+                        <tr>
+                            <td colspan="7" class="tabHeader" onclick="switchShowFishs(this.innerText)">Lava</td>
+                        </tr>
+                            
+                        <?php
+
+                            while($fishlist = $LavaFishs->fetch()){
+                        ?>
+
+                        <tr class="lavafishs">
+                            <td>
+                                <input type="checkbox" name="checkFish[]" value="<?php echo $fishlist['name_fr'] ?>" id="<?php echo $fishlist['name_fr'] ?>">
+                            </td>
+                            <td>Image</td>
+                            <td><?php echo $fishlist['name_fr'] ?></td>
+                            <td><?php echo $fishlist['name_eng'] ?></td>
+                            <td><?php echo $fishlist['liquid'] ?></td>
+                            <td><?php echo $fishlist['rarity'] ?></td>
+                            <td><?php echo $fishlist['price'] ?></td>
+                        </tr>
+
+                        <?php
+                            }
+                        ?>
+                    </table>
+                </div>
+
+                <div class="plasma">
+                    <table>
+                        <tr>
+                            <td colspan="7" class="tabHeader" onclick="switchShowFishs(this.innerText)">Plasma</td>
+                        </tr>
+                            
+                        <?php
+
+                            while($fishlist = $PlasmaFishs->fetch()){
+                        ?>
+
+                        <tr class="plasmafishs">
+                            <td>
+                                <input type="checkbox" name="checkFish[]" value="<?php echo $fishlist['name_fr'] ?>" id="<?php echo $fishlist['name_fr'] ?>">
+                            </td>
+                            <td>Image</td>
+                            <td><?php echo $fishlist['name_fr'] ?></td>
+                            <td><?php echo $fishlist['name_eng'] ?></td>
+                            <td><?php echo $fishlist['liquid'] ?></td>
+                            <td><?php echo $fishlist['rarity'] ?></td>
+                            <td><?php echo $fishlist['price'] ?></td>
+                        </tr>
+
+                        <?php
+                            }
+                        ?>
+                    </table>
+                </div>
+
+                <input type="submit" name="submit" id="submit_fishs" value="validate the purchase">
             </div>
 
-            <div class="choco">
-                <table>
-                    <tr>
-                        <td colspan="7" class="tabHeader" onclick="switchShowFishs(this.innerText)">Choco</td>
-                    </tr>
-                        
-                    <?php
-
-                        while($fishlist = $ChocoFishs->fetch()){
-                    ?>
-
-                    <tr class="chocofishs">
-                        <td>
-                            <input type="checkbox" name="<?php echo $fishlist['name_fr'] ?>" id="fish">
-                        </td>
-                        <td>Image</td>
-                        <td><?php echo $fishlist['name_fr'] ?></td>
-                        <td><?php echo $fishlist['name_eng'] ?></td>
-                        <td><?php echo $fishlist['liquid'] ?></td>
-                        <td><?php echo $fishlist['rarity'] ?></td>
-                        <td><?php echo $fishlist['price'] ?></td>
-                    </tr>
-
-                    <?php
-                        }
-                    ?>
-                </table>
-            </div>
-
-            <div class="lava">
-                <table>
-                    <tr>
-                        <td colspan="7" class="tabHeader" onclick="switchShowFishs(this.innerText)">Lava</td>
-                    </tr>
-                        
-                    <?php
-
-                        while($fishlist = $LavaFishs->fetch()){
-                    ?>
-
-                    <tr class="lavafishs">
-                        <td>
-                            <input type="checkbox" name="<?php echo $fishlist['name_fr'] ?>" id="fish">
-                        </td>
-                        <td>Image</td>
-                        <td><?php echo $fishlist['name_fr'] ?></td>
-                        <td><?php echo $fishlist['name_eng'] ?></td>
-                        <td><?php echo $fishlist['liquid'] ?></td>
-                        <td><?php echo $fishlist['rarity'] ?></td>
-                        <td><?php echo $fishlist['price'] ?></td>
-                    </tr>
-
-                    <?php
-                        }
-                    ?>
-                </table>
-            </div>
-
-            <div class="plasma">
-                <table>
-                    <tr>
-                        <td colspan="7" class="tabHeader" onclick="switchShowFishs(this.innerText)">Plasma</td>
-                    </tr>
-                        
-                    <?php
-
-                        while($fishlist = $PlasmaFishs->fetch()){
-                    ?>
-
-                    <tr class="plasmafishs">
-                        <td>
-                            <input type="checkbox" name="<?php echo $fishlist['name_fr'] ?>" id="fish">
-                        </td>
-                        <td>Image</td>
-                        <td><?php echo $fishlist['name_fr'] ?></td>
-                        <td><?php echo $fishlist['name_eng'] ?></td>
-                        <td><?php echo $fishlist['liquid'] ?></td>
-                        <td><?php echo $fishlist['rarity'] ?></td>
-                        <td><?php echo $fishlist['price'] ?></td>
-                    </tr>
-
-                    <?php
-                        }
-                    ?>
-                </table>
-            </div>
-
-            <input type="submit" id="submit_fishs" value="validate the purchase">
-        </div>
+    </form>
 
             <!-- Init all display -->
     <script>
@@ -168,77 +187,7 @@
         }
     </script>
 
-        <!-- Js script to show/hide lists -->
-        <script>
-            function switchShowFishs(text){
-                switch (text){
-
-                    case "Water": 
-                        var elems = document.getElementsByClassName('waterfishs');
-                        if(elems[0].style.display == "none")
-                        {
-                            for (var i=0;i<elems.length;i+=1){
-                                elems[i].style.display = 'inherit';
-                            }
-                        }
-                        else{
-                            for (var i=0;i<elems.length;i+=1){
-                                elems[i].style.display = 'none';
-                            }
-                        }
-
-                        break;
-
-                    case "Choco": 
-                        var elems = document.getElementsByClassName('chocofishs');
-                        if(elems[0].style.display == "none")
-                        {
-                            for (var i=0;i<elems.length;i+=1){
-                                elems[i].style.display = 'inherit';
-                            }
-                        }
-                        else{
-                            for (var i=0;i<elems.length;i+=1){
-                                elems[i].style.display = 'none';
-                            }
-                        }
-                        break;
-
-                    case "Lava": 
-                        var elems = document.getElementsByClassName('lavafishs');
-                        if(elems[0].style.display == "none")
-                        {
-                            for (var i=0;i<elems.length;i+=1){
-                                elems[i].style.display = 'inherit';
-                            }
-                        }
-                        else{
-                            for (var i=0;i<elems.length;i+=1){
-                                elems[i].style.display = 'none';
-                            }
-                        }
-                        break;
-
-                    case "Plasma": 
-                        var elems = document.getElementsByClassName('plasmafishs');
-                        if(elems[0].style.display == "none")
-                        {
-                            for (var i=0;i<elems.length;i+=1){
-                                elems[i].style.display = 'inherit';
-                            }
-                        }
-                        else{
-                            for (var i=0;i<elems.length;i+=1){
-                                elems[i].style.display = 'none';
-                            }
-                        }
-                        break;
-
-                    default:
-                        break;
-                }
-            }
-        </script>
+    <script src="script/marketplace.js"></script>
         
     <div class="content">
     </div>
