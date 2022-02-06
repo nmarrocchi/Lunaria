@@ -1,11 +1,3 @@
-<script>
-    function getfishcount(fishname)
-    {
-        var e = document.getElementById(fishname);
-        var fishvalue = e.value;
-    }
-</script>
-
 <?php
     session_start();
     require("session.php");
@@ -19,15 +11,7 @@
                 $fish = $bdd->query("SELECT * FROM fishs WHERE name_fr = '".$fishname."'");
                 $fish = $fish->fetch();
 
-                echo    "<script type='text/javascript'>",
-                        "getfishcount(",$fishname,");",
-                        "</script>";
-                
-                $fishcount = `echo "<script>document.writeln(fishvalue);</script>"`;
-
-
-
-                $bdd->query("INSERT INTO `orders`(`user`, `fish_fr`, `fish_eng`, `price`, `.$fishcount.`, `date`) VALUES ('".$_SESSION["user"]."','".$fishname."', '".$fish['name_eng']."','".$fish['price']."','".$date."')");
+                $bdd->query("INSERT INTO `orders`(`user`, `fish_fr`, `fish_eng`, `price`, `date`) VALUES ('".$_SESSION["user"]."','".$fishname."', '".$fish['name_eng']."','".$fish['price']."','".$date."')");
             
                 $OrderSendMsg = "Your order has been sent, thank you for your purchase";
                 
@@ -71,7 +55,7 @@
     ?>
 
         <div class="<?php echo $liquid[$i] ?>">
-        <table>
+        <table class="fishsListDiv">
             <tr>
                 <td colspan="7" class="tabHeader" onclick="switchShowFishs(this.innerText)"><?php echo $liquid[$i] ?></td>
             </tr>
@@ -101,11 +85,13 @@
                 ?>
 
         </table>
+
     </div>
 
     <?php
         }
     ?>
+
 
     <input type="submit" name="submit" id="submit_fishs" value="validate the purchase">
 </div>
