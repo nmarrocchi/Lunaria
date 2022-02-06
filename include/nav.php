@@ -11,10 +11,19 @@
 
     <a href="marketplace.php"><p>Marketplace</p></a>
     <a href="account.php"><p>My Account</p></a>
-    <a href="admin.php"><p>Admin Panel</p></a>
-    <a href="orders.php"><p>Orders</p></a>
+
+    <?php 
+      $admin = $bdd->query("SELECT * FROM users WHERE username='".$_SESSION['user']."' ");
+      $admin = $admin->fetch();
+      if ($admin['isAdmin'] == 1)
+      {
+
+    ?>
+      <a href="admin.php"><p>Admin Panel</p></a>
+      <a href="orders.php"><p>Orders</p></a>
     <?php 
     
+      }
       
     ?>
 
