@@ -6,33 +6,33 @@
   border-radius: 10px;
   text-align: center;
 }
-
+                                                                                                                                                                                                              
 .waterfishs img, .chocofishs img, .lavafishs img, .plasmafishs img{
   width: 5vw;
 }
-
+                                                                                                                                                                                                              
 .water, .choco, .lava, .plasma{
   margin: 5vh auto;
   text-align: center;
 }
-
-.fishsListDiv{
+                                                                                                                                                                                                              
+.water table, .choco table, .lava table, .plasma table{
   margin: 3vh auto;
 }
-
-.fishsListDiv td{
+                                                                                                                                                                                                              
+.water table td, .choco table td, .lava table td, .plasma table td{
   padding: 2vh 0.5vw;
   font-family: 'Courier New', Courier, monospace;
   text-align: center;
 }
-
+                                                                                                                                                                                                              
 .tabHeader{
   width: 40vw;
   border-radius: 10px 0px;
   border: double rgb(187, 187, 187) 1px;
   font-size: larger;
 }
-
+                                                                                                                                                                                                              
 .OrderSendMsg{
   font-family: 'Courier New', Courier, monospace;
   text-align: center;
@@ -46,7 +46,7 @@ input[type="checkbox"]{
   width: 20px;
   height: 20px;
 }
-
+                                                                                                                                                                                                              
 input[type="submit"]{
   margin: 5vh auto;
   padding: 0vh 2vw;
@@ -62,26 +62,26 @@ input[type="submit"]{
   word-break: keep-all;
   min-width: max-content;
 }
-
+                                                                                                                                                                                                              
 input[type="submit"]:hover{
   background-color: rgba(33, 30, 54, 0.6);
   cursor: url(../img/Cursor.cur), pointer;
 }
-
-
+                                                                                                                                                                                                              
+                                                                                                                                                                                                              
 /* ----- Responsive max-width screen : 890px ----- */
 @media screen and (max-width: 890px) and (min-width: 600px) {
-
-  .fishsListDiv td{
+                                                                                                                                                                                                              
+  .water table td, .choco table td, .lava table td, .plasma table td{
     padding: 1vh 0vw;
     font-size: small;
   }
-
+                                                                                                                                                                                                              
   input[type="checkbox"]{
     width: 10px;
     height: 10px;
   }
-
+                                                                                                                                                                                                              
   .waterfishs img, .chocofishs img, .lavafishs img, .plasmafishs img{
     width: 10vw;
   }
@@ -89,20 +89,20 @@ input[type="submit"]:hover{
 
 /* ----- Responsive max-width screen : 600px ----- */
 @media screen and (max-width: 600px) {
-
+                                                                                                                                                                                                              
   .fishs{
     width: 95vw;
   }
-
-  .fishsListDiv td{
+                                                                                                                                                                                                              
+  .water table td, .choco table td, .lava table td, .plasma table td{
     padding: 1vh 0vw;
     font-size: smaller;
   }
-
+                                                                                                                                                                                                              
   .waterfishs img, .chocofishs img, .lavafishs img, .plasmafishs img{
     width: 15vw;
   }
-
+                                                                                                                                                                                                              
   input[type="checkbox"]{
     width: 10px;
     height: 10px;
