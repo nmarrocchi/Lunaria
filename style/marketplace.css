@@ -16,11 +16,11 @@
   text-align: center;
 }
 
-.water table, .choco table, .lava table, .plasma table{
+.fishsListDiv{
   margin: 3vh auto;
 }
 
-.water table td, .choco table td, .lava table td, .plasma table td{
+.fishsListDiv td{
   padding: 2vh 0.5vw;
   font-family: 'Courier New', Courier, monospace;
   text-align: center;
@@ -72,7 +72,7 @@ input[type="submit"]:hover{
 /* ----- Responsive max-width screen : 890px ----- */
 @media screen and (max-width: 890px) and (min-width: 600px) {
 
-  .water table td, .choco table td, .lava table td, .plasma table td{
+  .fishsListDiv td{
     padding: 1vh 0vw;
     font-size: small;
   }
@@ -94,7 +94,7 @@ input[type="submit"]:hover{
     width: 95vw;
   }
 
-  .water table td, .choco table td, .lava table td, .plasma table td{
+  .fishsListDiv td{
     padding: 1vh 0vw;
     font-size: smaller;
   }
