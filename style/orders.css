@@ -1,11 +1,11 @@
-.usersList{
+.orderList{
   margin: 5vh auto;
   font-size: medium;
   font-family: 'Courier New', Courier, monospace;
   border-collapse: collapse;
 }
 
-.usersList td{
+.orderList td{
   padding: 1vh 2.5vw;
 }
 
@@ -15,7 +15,7 @@
   border-right: dotted white 2px;
 }
 
-.adminSubmit{
+.deleteOrderSubmit{
   border: none;
   font-size: large;
   font-family: 'Courier New', Courier, monospace;
@@ -26,7 +26,7 @@
   font-weight: bold;
 }
 
-.adminSubmit:focus{
+.deleteOrderSubmit:focus{
   border: none;
   outline: none;
   background-color: transparent;
@@ -34,7 +34,7 @@
 }
 
 
-.adminSubmit:hover{
+.deleteOrderSubmit:hover{
   background-color: transparent;
   cursor: url(../img/Cursor.cur), pointer;
 }
@@ -50,11 +50,11 @@
 
 /* ----- Responsive max-width screen : 600px ----- */
 @media screen and (max-width: 620px) {
-  .usersList td{
+  .orderList td{
     padding: 0.2vh 0.5vw;
   }
 
-  .usersList{
+  .orderList{
     margin: 5vh auto;
     font-size: small;
     font-family: 'Courier New', Courier, monospace;
