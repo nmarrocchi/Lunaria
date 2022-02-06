@@ -1,3 +1,11 @@
+<script>
+    function getfishcount(fishname)
+    {
+        var e = document.getElementById(fishname);
+        var fishvalue = e.value;
+    }
+</script>
+
 <?php
     session_start();
     require("session.php");
@@ -6,13 +14,23 @@
 
     if(isset($_POST['submit'])){
         if(!empty($_POST['checkFish'])) {    
-            foreach($_POST['checkFish'] as $value){
+            foreach($_POST['checkFish'] as $fishname){
                 $date = date('Y-m-d H:i:s');
-                $fish = $bdd->query("SELECT * FROM fishs WHERE name_fr = '".$value."'");
+                $fish = $bdd->query("SELECT * FROM fishs WHERE name_fr = '".$fishname."'");
                 $fish = $fish->fetch();
-                $bdd->query("INSERT INTO `orders`(`user`, `fish_fr`, `fish_eng`, `price`, `date`) VALUES ('".$_SESSION["user"]."','".$value."', '".$fish['name_eng']."','".$fish['price']."','".$date."')");
+
+                echo    "<script type='text/javascript'>",
+                        "getfishcount(",$fishname,");",
+                        "</script>";
+                
+                $fishcount = `echo "<script>document.writeln(fishvalue);</script>"`;
+
+
+
+                $bdd->query("INSERT INTO `orders`(`user`, `fish_fr`, `fish_eng`, `price`, `.$fishcount.`, `date`) VALUES ('".$_SESSION["user"]."','".$fishname."', '".$fish['name_eng']."','".$fish['price']."','".$date."')");
             
                 $OrderSendMsg = "Your order has been sent, thank you for your purchase";
+                
             }
         }
     } 
@@ -37,128 +55,62 @@
         $ChocoFishs = $bdd->query("SELECT * FROM fishs WHERE liquid='choco'");
         $LavaFishs = $bdd->query("SELECT * FROM fishs WHERE liquid='lava'");
         $PlasmaFishs = $bdd->query("SELECT * FROM fishs WHERE liquid='plasma'");
+
+        $liquids = $bdd->query("SELECT liquids FROM fishs_liquids ORDER BY id");
         include "include/nav.php";
     ?>
-    <form action="" method="post">
 
-            <div class="fishs">
-                <p class="OrderSendMsg"><?php echo $OrderSendMsg ?></p>
-                <div class="water">
-                    <table>
-                        <tr>
-                            <td colspan="7" class="tabHeader" onclick="switchShowFishs(this.innerText)">Water</td>
-                        </tr>
-                            
-                        <?php
+<form action="" method="post">
 
-                            while($fishlist = $WaterFishs->fetch()){
-                        ?>
+<div class="fishs">
+    <p class="OrderSendMsg"><?php echo $OrderSendMsg ?></p>
 
-                        <tr class="waterfishs">
-                            <td>
-                                <input type="checkbox" name="checkFish[]" value="<?php echo $fishlist['name_fr'] ?>" id="<?php echo $fishlist['name_fr'] ?>">
-                            </td>
-                            <td><img src="img/fish/water/<?php echo $fishlist['id'] ?>.png" alt="fish"></td>
-                            <td><?php echo $fishlist['name_fr'] ?> / <?php echo $fishlist['name_eng'] ?></td>
-                            <td><?php echo $fishlist['liquid'] ?></td>
-                            <td><?php echo $fishlist['rarity'] ?></td>
-                            <td><?php echo $fishlist['price'] ?></td>
-                        </tr>
+    <?php
+        $i = 0;
+        while($liquid = $liquids->fetch()){
+    ?>
 
-                        <?php
-                            }
-                        ?>
-                    </table>
-                </div>
+        <div class="<?php echo $liquid[$i] ?>">
+        <table>
+            <tr>
+                <td colspan="7" class="tabHeader" onclick="switchShowFishs(this.innerText)"><?php echo $liquid[$i] ?></td>
+            </tr>
 
-                <div class="choco">
-                    <table>
-                        <tr>
-                            <td colspan="7" class="tabHeader" onclick="switchShowFishs(this.innerText)">Choco</td>
-                        </tr>
-                            
-                        <?php
+            <?php
+            if ($i == 0) { $liquidToFetch = $WaterFishs;}
+            elseif ($i == 1) { $liquidToFetch = $ChocoFishs;}
+            elseif ($i == 1) { $liquidToFetch = $LavaFishs;}
+            elseif ($i == 1) { $liquidToFetch = $PlasmaFishs;}
 
-                            while($fishlist = $ChocoFishs->fetch()){
-                        ?>
+                while($fishlist = $liquidToFetch->fetch()){
+            ?>
 
-                        <tr class="chocofishs">
-                            <td>
-                                <input type="checkbox" name="checkFish[]" value="<?php echo $fishlist['name_fr'] ?>" id="<?php echo $fishlist['name_fr'] ?>">
-                            </td>
-                            <td><img src="img/fish/choco/<?php echo $fishlist['id'] ?>.png" alt="fish"></td>
-                            <td><?php echo $fishlist['name_fr'] ?> / <?php echo $fishlist['name_eng'] ?></td>
-                            <td><?php echo $fishlist['liquid'] ?></td>
-                            <td><?php echo $fishlist['rarity'] ?></td>
-                            <td><?php echo $fishlist['price'] ?></td>
-                        </tr>
+                <tr class="waterfishs">
+                    <td>
+                        <input type="checkbox" name="checkFish[]" value="<?php echo $fishlist['name_fr'] ?>" id="<?php echo $fishlist['name_fr'] ?>">
+                    </td>
+                    <td><img src="img/fish/<?php echo $liquid[$i] ?>/<?php echo $fishlist['id'] ?>.png" alt="fish"></td>
+                    <td><?php echo $fishlist['name_fr'] ?> / <?php echo $fishlist['name_eng'] ?></td>
+                    <td><?php echo $fishlist['rarity'] ?></td>
+                    <td><?php echo $fishlist['price'] ?></td>
 
-                        <?php
-                            }
-                        ?>
-                    </table>
-                </div>
+                </tr>
 
-                <div class="lava">
-                    <table>
-                        <tr>
-                            <td colspan="7" class="tabHeader" onclick="switchShowFishs(this.innerText)">Lava</td>
-                        </tr>
-                            
-                        <?php
+                <?php
+                    }
+                ?>
 
-                            while($fishlist = $LavaFishs->fetch()){
-                        ?>
+        </table>
+    </div>
 
-                        <tr class="lavafishs">
-                            <td>
-                                <input type="checkbox" name="checkFish[]" value="<?php echo $fishlist['name_fr'] ?>" id="<?php echo $fishlist['name_fr'] ?>">
-                            </td>
-                            <td><img src="img/fish/lava/<?php echo $fishlist['id'] ?>.png" alt="fish"></td>
-                            <td><?php echo $fishlist['name_fr'] ?> / <?php echo $fishlist['name_eng'] ?></td>
-                            <td><?php echo $fishlist['liquid'] ?></td>
-                            <td><?php echo $fishlist['rarity'] ?></td>
-                            <td><?php echo $fishlist['price'] ?></td>
-                        </tr>
+    <?php
+        }
+    ?>
 
-                        <?php
-                            }
-                        ?>
-                    </table>
-                </div>
+    <input type="submit" name="submit" id="submit_fishs" value="validate the purchase">
+</div>
 
-                <div class="plasma">
-                    <table>
-                        <tr>
-                            <td colspan="7" class="tabHeader" onclick="switchShowFishs(this.innerText)">Plasma</td>
-                        </tr>
-                            
-                        <?php
-
-                            while($fishlist = $PlasmaFishs->fetch()){
-                        ?>
-
-                        <tr class="plasmafishs">
-                            <td>
-                                <input type="checkbox" name="checkFish[]" value="<?php echo $fishlist['name_fr'] ?>" id="<?php echo $fishlist['name_fr'] ?>">
-                            </td>
-                            <td><img src="img/fish/plasma/<?php echo $fishlist['id'] ?>.png" alt="fish"></td>
-                            <td><?php echo $fishlist['name_fr'] ?> / <?php echo $fishlist['name_eng'] ?></td>
-                            <td><?php echo $fishlist['liquid'] ?></td>
-                            <td><?php echo $fishlist['rarity'] ?></td>
-                            <td><?php echo $fishlist['price'] ?></td>
-                        </tr>
-
-                        <?php
-                            }
-                        ?>
-                    </table>
-                </div>
-
-                <input type="submit" name="submit" id="submit_fishs" value="validate the purchase">
-            </div>
-
-    </form>
+</form>
 
             <!-- Init all display -->
     <script>
