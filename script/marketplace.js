@@ -1,5 +1,27 @@
 //Js script to show/hide lists
 
+    // - Init all display
+    var elems = document.getElementsByClassName('waterfishs');
+    for (var i=0;i<elems.length;i+=1){
+        elems[i].style.display = 'none';
+    }
+
+    var elems = document.getElementsByClassName('chocofishs');
+    for (var i=0;i<elems.length;i+=1){
+        elems[i].style.display = 'none';
+    }
+
+    var elems = document.getElementsByClassName('lavafishs');
+    for (var i=0;i<elems.length;i+=1){
+        elems[i].style.display = 'none';
+    }
+
+    var elems = document.getElementsByClassName('plasmafishs');
+    for (var i=0;i<elems.length;i+=1){
+        elems[i].style.display = 'none';
+    }
+
+
   function switchShowFishs(text){
       switch (text){
 
